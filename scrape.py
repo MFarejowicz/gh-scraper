@@ -22,7 +22,7 @@ def make_id(name):
     for word in split:
         out += word[:3] if len(word) > 3 else word
     if out in existing_id:
-        print(name)
+        out = out + "2"
     existing_id.add(out)
     return out
 
@@ -35,7 +35,7 @@ def scrub_price(price):
     return float(price)
 
 
-with open('FILENAME.html') as fp:
+with open('xxxx.html') as fp:
     soup = BeautifulSoup(fp, 'html.parser')
 
 output = []
@@ -56,6 +56,6 @@ for ms in soup.find_all('div', class_='menuSection'):
 
         output.append(menu_item) # Append finished menu item to output
 
-file = open("FILENAME.json", "w")
+file = open("xxxx.json", "w")
 json.dump(output, file)
 file.close()
